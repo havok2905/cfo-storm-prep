@@ -3,10 +3,11 @@
     <md-card-title>Home Prep</md-card-title>
   </md-card-header>
   <md-card-content>
-    <md-selection-list>
-      <md-list-option *ngFor="let item of items">
-        {{ item }}
-      </md-list-option>
-    </md-selection-list>
+    <md-list>
+      <md-list-item *ngFor="let item of items">
+        <md-checkbox (change)="toggleItem(item)"></md-checkbox>
+        {{ item.name }}
+      </md-list-item>
+    </md-list>
   </md-card-content>
 </md-card>

@@ -5,6 +5,7 @@ import {
   MdCardModule, 
   MatTableModule,
   MdListModule,
+  MdCheckboxModule
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 
@@ -26,7 +27,8 @@ import { ServicesDirectoryComponent } from './services-directory/services-direct
     MdToolbarModule,
     MdCardModule,
     MatTableModule,
-    MdListModule
+    MdListModule,
+    MdCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
