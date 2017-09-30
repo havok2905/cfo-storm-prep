@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as localforage from "localforage";
-import ListItem from '../list-item/list-item';
+import HomePrepItem from './home-prep-item';
 
 @Injectable()
 export class HomePrepService {
@@ -14,7 +14,7 @@ export class HomePrepService {
     return this.store.getItem('home-prep-items');
   }
 
-  public setHomePrepItems(items: Array<ListItem>): Promise<any> {
+  public setHomePrepItems(items: Array<HomePrepItem>): Promise<any> {
     return this.store.setItem('home-prep-items', items);
   }
 

@@ -28,3 +28,7 @@
 .github-link img {
   width: 50px;
 }
+
+.md-list-item-text {
+  margin-left: 10px;
+}

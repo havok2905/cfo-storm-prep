@@ -6,7 +6,7 @@
     <md-list>
       <md-list-item *ngFor="let item of items">
         <md-checkbox (change)="updateLocalStorage()" [(ngModel)]="item.complete"></md-checkbox>
-        {{ item.name }}
+        <span class='md-list-item-text'>{{ item.name }}</span>
       </md-list-item>
     </md-list>
   </md-card-content>

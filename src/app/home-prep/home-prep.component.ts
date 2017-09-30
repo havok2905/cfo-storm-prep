@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import ListItem from '../list-item/list-item';
+import HomePrepItem from './home-prep-item';
 import { HomePrepService } from './home-prep.service';
 import * as localforage from "localforage";
 
@@ -11,13 +11,13 @@ import * as localforage from "localforage";
 })
 export class HomePrepComponent implements OnInit {
 
-  private seeds: Array<ListItem> = [
-    new ListItem(1, 'Board Up All Windows', false),
-    new ListItem(2, 'Locate Your Nearest Shelter', false),
-    new ListItem(3, 'Fill Up Your Gas Tank', false)
+  private seeds: Array<HomePrepItem> = [
+    new HomePrepItem(1, 'Board Up All Windows', false),
+    new HomePrepItem(2, 'Locate Your Nearest Shelter', false),
+    new HomePrepItem(3, 'Fill Up Your Gas Tank', false)
   ];
 
-  public items: Array<ListItem> = [];
+  public items: Array<HomePrepItem> = [];
 
   constructor(private homePrepService: HomePrepService) {
 
@@ -43,7 +43,7 @@ export class HomePrepComponent implements OnInit {
   private setupLocalItems(): void {
     this.homePrepService.getHomePrepItems().then((result)=> {
       this.items = result.map((item)=> {
-        return new ListItem(item.id, item.name, item.complete);
+        return new HomePrepItem(item.id, item.name, item.complete);
       });
     });
   }

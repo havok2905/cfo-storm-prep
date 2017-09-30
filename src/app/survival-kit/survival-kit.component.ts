@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import ListItem from '../list-item/list-item';
+import SurvivalKitItem from './survival-kit-item';
 import { SurvivalKitService } from './survival-kit.service';
 import * as localforage from "localforage";
 
@@ -11,13 +11,13 @@ import * as localforage from "localforage";
 })
 export class SurvivalKitComponent implements OnInit {
 
-  private seeds: Array<ListItem> = [
-    new ListItem(1, 'Pocket Radio', false),
-    new ListItem(2, '3 Gallons of Water Per Person', false),
-    new ListItem(3, 'First Aid Kit', false)
+  private seeds: Array<SurvivalKitItem> = [
+    new SurvivalKitItem(1, 'Pocket Radio', false, 'https://www.amazon.com/Sony-ICFP26-Portable-Radio-Black/dp/B012F0DGYE'),
+    new SurvivalKitItem(2, '3 Gallons of Water Per Person', false, 'https://www.amazon.com/Gallon-Plastic-Water-Bottle-Handle/dp/B003VSEGCQ'),
+    new SurvivalKitItem(3, 'First Aid Kit', false, 'https://www.amazon.com/Coleman-Expedition-205-Piece-Emergencies-Workplace/dp/B00GOPNO6C')
   ];
 
-  public items: Array<ListItem> = [];
+  public items: Array<SurvivalKitItem> = [];
 
   constructor(private survivalKitService: SurvivalKitService) {
 
@@ -43,7 +43,7 @@ export class SurvivalKitComponent implements OnInit {
   private setupLocalItems(): void {
     this.survivalKitService.getSurvivalKitItems().then((result)=> {
       this.items = result.map((item)=> {
-        return new ListItem(item.id, item.name, item.complete);
+        return new SurvivalKitItem(item.id, item.name, item.complete, item.productLink);
       });
     });
   }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as localforage from "localforage";
-import ListItem from '../list-item/list-item';
+import SurvivalKitItem from './survival-kit-item';
 
 @Injectable()
 export class SurvivalKitService {
@@ -14,7 +14,7 @@ export class SurvivalKitService {
     return this.store.getItem('survival-kit-items');
   }
 
-  public setSurvivalKitItems(items: Array<ListItem>): Promise<any> {
+  public setSurvivalKitItems(items: Array<SurvivalKitItem>): Promise<any> {
     return this.store.setItem('survival-kit-items', items);
   }
 

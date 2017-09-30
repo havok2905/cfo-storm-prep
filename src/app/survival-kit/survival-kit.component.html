@@ -6,7 +6,7 @@
     <md-list>
       <md-list-item *ngFor="let item of items">
         <md-checkbox (change)="updateLocalStorage()" [(ngModel)]="item.complete"></md-checkbox>
-        {{ item.name }}
+        <a target='_blank' class='md-list-item-text' href='{{ item.productLink }}'>{{ item.name }}</a>
       </md-list-item>
     </md-list>
   </md-card-content>

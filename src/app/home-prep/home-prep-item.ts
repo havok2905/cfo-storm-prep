@@ -1,7 +1,7 @@
-export default class ListItem {
+export default class HomePrepItem {
   public id: number;
   public name: string;
-  public complete: boolean = false;
+  public complete: boolean;
 
   constructor(id: number, name: string, complete: boolean) {
     this.id = id;
