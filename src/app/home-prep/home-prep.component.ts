@@ -21,18 +21,30 @@ export class HomePrepComponent implements OnInit {
 
   public items: Array<HomePrepItem> = [];
 
-  constructor(private homePrepService: HomePrepService) {
-
-  }
+  constructor(private homePrepService: HomePrepService) { }
 
   ngOnInit() {
-    this.seedFirstItems();
-    this.setupLocalItems();
+    this.setupItems();
   }
 
   public updateLocalStorage(): void {
     this.setProgress();
     this.homePrepService.setHomePrepItems(this.items);
+  }
+
+  private setupItems(): void {
+    this.homePrepService.getHomePrepItems().then((result)=> {
+      if(result === null) {
+        this.items = this.seeds;
+      } else {
+        this.items = result.map((item)=> {
+          return new HomePrepItem(item.id, item.name, item.complete);
+        });
+      }
+
+      this.homePrepService.setHomePrepItems(this.items);
+      this.setProgress();
+    });
   }
 
   private setProgress(): void {
@@ -44,23 +56,5 @@ export class HomePrepComponent implements OnInit {
     } else {
       this.progress = 0;
     }
-  }
-
-  private seedFirstItems(): void {
-    this.homePrepService.getHomePrepItems().then((result)=> {
-      if(result === null) {
-        this.homePrepService.setHomePrepItems(this.seeds);
-      } 
-    });
-  }
-
-  private setupLocalItems(): void {
-    this.homePrepService.getHomePrepItems().then((result)=> {
-      this.items = result.map((item)=> {
-        return new HomePrepItem(item.id, item.name, item.complete);
-      });
-
-      this.setProgress();
-    });
   }
 }

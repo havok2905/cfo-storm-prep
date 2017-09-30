@@ -21,18 +21,30 @@ export class SurvivalKitComponent implements OnInit {
 
   public items: Array<SurvivalKitItem> = [];
 
-  constructor(private survivalKitService: SurvivalKitService) {
-
-  }
+  constructor(private survivalKitService: SurvivalKitService) { }
 
   ngOnInit() {
-    this.seedFirstItems();
-    this.setupLocalItems();
+    this.setupItems();
   }
 
   public updateLocalStorage(): void {  
     this.setProgress();  
     this.survivalKitService.setSurvivalKitItems(this.items);
+  }
+
+  private setupItems(): void {
+    this.survivalKitService.getSurvivalKitItems().then((result)=> {
+      if(result === null) {
+        this.items = this.seeds;
+      } else {
+        this.items = result.map((item)=> {
+          return new SurvivalKitItem(item.id, item.name, item.complete, item.productLink);
+        });
+      }
+
+      this.survivalKitService.setSurvivalKitItems(this.items);
+      this.setProgress();
+    });
   }
 
   private setProgress(): void {
@@ -44,23 +56,5 @@ export class SurvivalKitComponent implements OnInit {
     } else {
       this.progress = 0;
     }
-  }
-
-  private seedFirstItems(): void {
-    this.survivalKitService.getSurvivalKitItems().then((result)=> {
-      if(result === null) {
-        this.survivalKitService.setSurvivalKitItems(this.seeds);
-      }
-    });
-  }
-
-  private setupLocalItems(): void {
-    this.survivalKitService.getSurvivalKitItems().then((result)=> {
-      this.items = result.map((item)=> {
-        return new SurvivalKitItem(item.id, item.name, item.complete, item.productLink);
-      });
-
-      this.setProgress();
-    });
   }
 }
