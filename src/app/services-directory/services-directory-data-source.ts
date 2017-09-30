@@ -6,9 +6,8 @@ import { DataSource } from '@angular/cdk/collections';
 export class ServicesDirectoryDataSource extends DataSource<any> {
   connect(): Observable<ServiceItem[]> {
     return Observable.of([
-      new ServiceItem('Foo Service', '111-111-1111', 'foo@service.com', 'http://www.google.com'),
-      new ServiceItem('Bar Service', '222-222-2222', 'bar@service.com', 'http://www.google.com'),
-      new ServiceItem('Baz Service', '333-333-3333', 'baz@service.com', 'http://www.google.com')
+      new ServiceItem('Orlando’s Emergency Radio Station 1650AM', 'N/A', 'N/A', 'http://www.cityoforlando.net/emergency/'),
+      new ServiceItem('Orlando OEM', '321.235.5438', 'N/A', 'http://www.cityoforlando.net/emergency/contacts/')
     ]);
   }
 
