@@ -2,6 +2,17 @@
   <h1>{{ title }}</h1>
 </md-toolbar>
 
-<app-services-directory></app-services-directory>
-<app-survival-kit></app-survival-kit>
-<app-home-prep></app-home-prep>
+<div class='row'>
+  <div class='column--large'>
+    <app-services-directory></app-services-directory>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='column--small'>
+    <app-survival-kit></app-survival-kit>
+  </div>
+  <div class='column--small'>
+    <app-home-prep></app-home-prep>
+  </div>
+</div>

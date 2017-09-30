@@ -1,3 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.row {
+  margin: 5%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.column--large {
+  width: 100%;
+}
+
+.column--small {
+  width: 45%;
+}
