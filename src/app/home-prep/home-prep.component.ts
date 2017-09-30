@@ -11,7 +11,13 @@ import * as localforage from "localforage";
 })
 export class HomePrepComponent implements OnInit {
 
-  items: Array<ListItem> = [];
+  private seeds: Array<ListItem> = [
+    new ListItem(1, 'Board Up All Windows', false),
+    new ListItem(2, 'Locate Your Nearest Shelter', false),
+    new ListItem(3, 'Fill Up Your Gas Tank', false)
+  ];
+
+  public items: Array<ListItem> = [];
 
   constructor(private homePrepService: HomePrepService) {
 
@@ -28,15 +34,9 @@ export class HomePrepComponent implements OnInit {
 
   private seedFirstItems(): void {
     this.homePrepService.getHomePrepItems().then((result)=> {
-      if(result || result.length > 0) {
-        return;
+      if(result === null) {
+        this.homePrepService.setHomePrepItems(this.seeds);
       } 
-
-      this.homePrepService.setHomePrepItems([
-        new ListItem(1, 'Foo', false),
-        new ListItem(2, 'Bar', false),
-        new ListItem(3, 'Baz', false)
-      ]);
     });
   }
 

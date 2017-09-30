@@ -11,7 +11,13 @@ import * as localforage from "localforage";
 })
 export class SurvivalKitComponent implements OnInit {
 
-  items: Array<ListItem> = [];
+  private seeds: Array<ListItem> = [
+    new ListItem(1, 'Pocket Radio', false),
+    new ListItem(2, '3 Gallons of Water Per Person', false),
+    new ListItem(3, 'First Aid Kit', false)
+  ];
+
+  public items: Array<ListItem> = [];
 
   constructor(private survivalKitService: SurvivalKitService) {
 
@@ -28,15 +34,9 @@ export class SurvivalKitComponent implements OnInit {
 
   private seedFirstItems(): void {
     this.survivalKitService.getSurvivalKitItems().then((result)=> {
-      if(result || result.length > 0) {
-        return;
-      } 
-
-      this.survivalKitService.setSurvivalKitItems([
-        new ListItem(1, 'Foo', false),
-        new ListItem(2, 'Bar', false),
-        new ListItem(3, 'Baz', false)
-      ]);
+      if(result === null) {
+        this.survivalKitService.setSurvivalKitItems(this.seeds);
+      }
     });
   }
 
