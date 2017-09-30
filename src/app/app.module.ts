@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdToolbarModule, MdCardModule, MatTableModule } from '@angular/material';
+import { 
+  MdToolbarModule, 
+  MdCardModule, 
+  MatTableModule,
+  MdListModule,
+} from '@angular/material';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -20,7 +25,8 @@ import { ServicesDirectoryComponent } from './services-directory/services-direct
     BrowserAnimationsModule,
     MdToolbarModule,
     MdCardModule,
-    MatTableModule
+    MatTableModule,
+    MdListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

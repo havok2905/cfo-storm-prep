@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurvivalKitComponent implements OnInit {
 
+  items = ['Foo', 'Bar', 'Baz'];
+
   constructor() { }
 
   ngOnInit() {

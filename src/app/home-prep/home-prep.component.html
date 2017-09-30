@@ -3,5 +3,10 @@
     <md-card-title>Home Prep</md-card-title>
   </md-card-header>
   <md-card-content>
+    <md-selection-list>
+      <md-list-option *ngFor="let item of items">
+        {{ item }}
+      </md-list-option>
+    </md-selection-list>
   </md-card-content>
 </md-card>
