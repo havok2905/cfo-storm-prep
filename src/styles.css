@@ -6,7 +6,6 @@
   margin: 5%;
   display: flex;
   justify-content: space-between;
-
 }
 
 .column--large {
@@ -15,4 +14,17 @@
 
 .column--small {
   width: 45%;
+}
+
+.md-toolbar-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.github-link {
+  display: block;
+  line-height: 0;
+}
+
+.github-link img {
+  width: 50px;
 }
