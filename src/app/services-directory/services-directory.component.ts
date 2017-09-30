@@ -8,7 +8,7 @@ import { ServicesDirectoryDataSource } from './services-directory-data-source';
 })
 export class ServicesDirectoryComponent implements OnInit {
 
-  displayedColumns = ['name', 'phoneNumber', 'email'];
+  displayedColumns = ['name', 'phoneNumber', 'email', 'website'];
 
   dataSource = new ServicesDirectoryDataSource();
 

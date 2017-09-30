@@ -16,6 +16,10 @@
         <md-header-cell *mdHeaderCellDef>Email</md-header-cell>
         <md-cell *mdCellDef="let row">{{ row.email }}</md-cell>
       </ng-container>
+      <ng-container mdColumnDef="website">
+        <md-header-cell *mdHeaderCellDef>Website</md-header-cell>
+        <md-cell *mdCellDef="let row">{{ row.website }}</md-cell>
+      </ng-container>
       <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
       <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
     </md-table>
