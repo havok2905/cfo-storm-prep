@@ -17,6 +17,8 @@ export class SurvivalKitComponent implements OnInit {
     new SurvivalKitItem(3, 'First Aid Kit', false, 'https://www.amazon.com/Coleman-Expedition-205-Piece-Emergencies-Workplace/dp/B00GOPNO6C')
   ];
 
+  public progress: number = 0;
+
   public items: Array<SurvivalKitItem> = [];
 
   constructor(private survivalKitService: SurvivalKitService) {
@@ -28,8 +30,20 @@ export class SurvivalKitComponent implements OnInit {
     this.setupLocalItems();
   }
 
-  public updateLocalStorage(): void {    
+  public updateLocalStorage(): void {  
+    this.setProgress();  
     this.survivalKitService.setSurvivalKitItems(this.items);
+  }
+
+  private setProgress(): void {
+    const total = this.items.length;
+    const numCompleted = this.items.filter((item)=> { return item.complete }).length;
+
+    if(numCompleted) {
+      this.progress = ( numCompleted / total ) * 100;
+    } else {
+      this.progress = 0;
+    }
   }
 
   private seedFirstItems(): void {
@@ -45,6 +59,8 @@ export class SurvivalKitComponent implements OnInit {
       this.items = result.map((item)=> {
         return new SurvivalKitItem(item.id, item.name, item.complete, item.productLink);
       });
+
+      this.setProgress();
     });
   }
 }

@@ -3,6 +3,11 @@
     <md-card-title>Survival Supplies</md-card-title>
   </md-card-header>
   <md-card-content>
+    <md-progress-bar
+          [color]="primary"
+          [mode]="determinate"
+          [value]=progress>
+    </md-progress-bar>
     <md-list>
       <md-list-item *ngFor="let item of items">
         <md-checkbox (change)="updateLocalStorage()" [(ngModel)]="item.complete"></md-checkbox>

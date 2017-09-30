@@ -17,6 +17,8 @@ export class HomePrepComponent implements OnInit {
     new HomePrepItem(3, 'Fill Up Your Gas Tank', false)
   ];
 
+  public progress: number = 0;
+
   public items: Array<HomePrepItem> = [];
 
   constructor(private homePrepService: HomePrepService) {
@@ -29,7 +31,19 @@ export class HomePrepComponent implements OnInit {
   }
 
   public updateLocalStorage(): void {
+    this.setProgress();
     this.homePrepService.setHomePrepItems(this.items);
+  }
+
+  private setProgress(): void {
+    const total = this.items.length;
+    const numCompleted = this.items.filter((item)=> { return item.complete }).length;
+
+    if(numCompleted) {
+      this.progress = ( numCompleted / total ) * 100;
+    } else {
+      this.progress = 0;
+    }
   }
 
   private seedFirstItems(): void {
@@ -45,6 +59,8 @@ export class HomePrepComponent implements OnInit {
       this.items = result.map((item)=> {
         return new HomePrepItem(item.id, item.name, item.complete);
       });
+
+      this.setProgress();
     });
   }
 }

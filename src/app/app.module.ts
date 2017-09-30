@@ -6,7 +6,8 @@ import {
   MdCardModule, 
   MatTableModule,
   MdListModule,
-  MdCheckboxModule
+  MdCheckboxModule,
+  MatProgressBarModule
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 
@@ -30,7 +31,8 @@ import { ServicesDirectoryComponent } from './services-directory/services-direct
     MdCardModule,
     MatTableModule,
     MdListModule,
-    MdCheckboxModule
+    MdCheckboxModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
