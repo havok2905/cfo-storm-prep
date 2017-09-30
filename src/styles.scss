@@ -8,6 +8,13 @@ $app-warn: mat-palette($mat-red);
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 @include angular-material-theme($app-theme);
 
+.flag {
+  display: block;
+  margin: 30px auto;
+  width: 300px;
+  box-shadow: 0 0 10px #222222;
+}
+
 .footer {
   border-top: solid 1px #EEEEEE;
   padding: 50px;
@@ -30,7 +37,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 .title {
   display: block;
-  margin: 2em auto;
+  margin: 1em auto;
   max-width: 900px;
   text-align: center;
   line-height: 1.5;
