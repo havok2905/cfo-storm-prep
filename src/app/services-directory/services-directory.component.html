@@ -1,3 +1,23 @@
 <md-card>
-  <p>services-directory works!</p>
+  <md-card-header>
+    <md-card-title>Services Directory</md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <md-table [dataSource]="dataSource">
+      <ng-container mdColumnDef="name">
+        <md-header-cell *mdHeaderCellDef>Service</md-header-cell>
+        <md-cell *mdCellDef="let row">{{ row.name }}</md-cell>
+      </ng-container>
+      <ng-container mdColumnDef="phoneNumber">
+        <md-header-cell *mdHeaderCellDef>Phone Number</md-header-cell>
+        <md-cell *mdCellDef="let row">{{ row.phoneNumber }}</md-cell>
+      </ng-container>
+      <ng-container mdColumnDef="email">
+        <md-header-cell *mdHeaderCellDef>Email</md-header-cell>
+        <md-cell *mdCellDef="let row">{{ row.email }}</md-cell>
+      </ng-container>
+      <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+      <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+    </md-table>
+  </md-card-content>
 </md-card>
