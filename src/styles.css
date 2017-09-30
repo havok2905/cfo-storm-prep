@@ -32,3 +32,11 @@
 .md-list-item-text {
   margin-left: 10px;
 }
+
+.icon-status-done {
+  color: #68f260;
+}
+
+.icon-status-warning {
+  color: #e02626;
+}

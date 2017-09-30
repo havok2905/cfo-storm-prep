@@ -1,5 +1,9 @@
 <md-card>
   <md-card-header>
+    <div md-card-avatar>
+      <md-icon class='icon-status-done' *ngIf="progress === 100">done</md-icon>
+      <md-icon class='icon-status-warning' *ngIf="progress !== 100">warning</md-icon>
+    </div>
     <md-card-title>Home Prep</md-card-title>
   </md-card-header>
   <md-card-content>
