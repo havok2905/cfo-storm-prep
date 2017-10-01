@@ -17,9 +17,11 @@ import { AppComponent } from './app.component';
 import { ServicesDirectoryComponent } from './services-directory/services-directory.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CheckListComponent } from './check-list/check-list.component';
+import { FoodGuideComponent } from './food-guide/food-guide.component';
 
 const appRoutes: Routes = [
-  { path: '', component: DashboardComponent }
+  { path: '', component: DashboardComponent },
+  { path: 'food-guide', component: FoodGuideComponent }
 ];
 
 @NgModule({
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     AppComponent,
     ServicesDirectoryComponent,
     DashboardComponent,
-    CheckListComponent
+    CheckListComponent,
+    FoodGuideComponent
   ],
   imports: [
     RouterModule.forRoot(

@@ -66,6 +66,10 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
   flex: 1 1 auto;
 }
 
+.navbar-link {
+  color: #FFFFFF;
+}
+
 .github-link {
   display: block;
   line-height: 0;
