@@ -3,8 +3,7 @@ import { ServicesDirectoryDataSource } from './services-directory-data-source';
 
 @Component({
   selector: 'app-services-directory',
-  templateUrl: './services-directory.component.html',
-  styleUrls: ['./services-directory.component.css']
+  templateUrl: './services-directory.component.html'
 })
 export class ServicesDirectoryComponent implements OnInit {
 

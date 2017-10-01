@@ -3,8 +3,7 @@ import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-check-list',
-  templateUrl: './check-list.component.html',
-  styleUrls: ['./check-list.component.css']
+  templateUrl: './check-list.component.html'
 })
 export class CheckListComponent implements OnInit {
 

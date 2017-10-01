@@ -13,7 +13,6 @@ import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'],
   providers: [SurvivalKitService, HomePrepService]
 })
 export class DashboardComponent implements OnInit {
