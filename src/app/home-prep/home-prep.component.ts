@@ -24,11 +24,11 @@ export class HomePrepComponent implements OnInit {
 
   public updateLocalStorage(): void {
     this.setProgress();
-    this.homePrepService.setHomePrepItems(this.items);
+    this.homePrepService.setItems(this.items);
   }
 
   private setupItems(): void {
-    this.homePrepService.getHomePrepItems().then((result)=> {
+    this.homePrepService.getItems().then((result)=> {
       if(result === null) {
         this.items = HOME_PREP_ITEMS;
       } else {
@@ -37,7 +37,7 @@ export class HomePrepComponent implements OnInit {
         });
       }
 
-      this.homePrepService.setHomePrepItems(this.items);
+      this.homePrepService.setItems(this.items);
       this.setProgress();
     });
   }

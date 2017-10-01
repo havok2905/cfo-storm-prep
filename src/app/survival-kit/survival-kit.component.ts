@@ -24,11 +24,11 @@ export class SurvivalKitComponent implements OnInit {
 
   public updateLocalStorage(): void {  
     this.setProgress();  
-    this.survivalKitService.setSurvivalKitItems(this.items);
+    this.survivalKitService.setItems(this.items);
   }
 
   private setupItems(): void {
-    this.survivalKitService.getSurvivalKitItems().then((result)=> {
+    this.survivalKitService.getItems().then((result)=> {
       if(result === null) {
         this.items = SURVIVAL_KIT_ITEMS;
       } else {
@@ -37,7 +37,7 @@ export class SurvivalKitComponent implements OnInit {
         });
       }
 
-      this.survivalKitService.setSurvivalKitItems(this.items);
+      this.survivalKitService.setItems(this.items);
       this.setProgress();
     });
   }

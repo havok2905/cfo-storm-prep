@@ -10,11 +10,11 @@ export class HomePrepService {
     driver: localforage.LOCALSTORAGE
   });
 
-  public getHomePrepItems(): Promise<any> {
+  public getItems(): Promise<any> {
     return this.store.getItem('home-prep-items');
   }
 
-  public setHomePrepItems(items: Array<HomePrepItem>): Promise<any> {
+  public setItems(items: Array<HomePrepItem>): Promise<any> {
     return this.store.setItem('home-prep-items', items);
   }
 

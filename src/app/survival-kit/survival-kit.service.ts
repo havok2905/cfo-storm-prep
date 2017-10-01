@@ -10,11 +10,11 @@ export class SurvivalKitService {
     driver: localforage.LOCALSTORAGE
   });
 
-  public getSurvivalKitItems(): Promise<any> {
+  public getItems(): Promise<any> {
     return this.store.getItem('survival-kit-items');
   }
 
-  public setSurvivalKitItems(items: Array<SurvivalKitItem>): Promise<any> {
+  public setItems(items: Array<SurvivalKitItem>): Promise<any> {
     return this.store.setItem('survival-kit-items', items);
   }
 
