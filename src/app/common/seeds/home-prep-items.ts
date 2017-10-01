@@ -1,4 +1,4 @@
-import HomePrepItem from '../../home-prep/home-prep-item';
+import HomePrepItem from '../entities/home-prep-item';
 
 export default [
   new HomePrepItem(1, 'Board Up All Windows', false),

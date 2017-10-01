@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as localforage from "localforage";
-import SurvivalKitItem from './survival-kit-item';
+import SurvivalKitItem from '../entities/survival-kit-item';
 
 @Injectable()
 export class SurvivalKitService {

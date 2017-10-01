@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as localforage from "localforage";
-import HomePrepItem from './home-prep-item';
+import HomePrepItem from '../entities/home-prep-item';
 
 @Injectable()
 export class HomePrepService {

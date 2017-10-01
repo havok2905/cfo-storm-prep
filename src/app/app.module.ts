@@ -14,10 +14,9 @@ import {
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { SurvivalKitComponent } from './survival-kit/survival-kit.component';
-import { HomePrepComponent } from './home-prep/home-prep.component';
 import { ServicesDirectoryComponent } from './services-directory/services-directory.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CheckListComponent } from './check-list/check-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent }
@@ -26,10 +25,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    SurvivalKitComponent,
-    HomePrepComponent,
     ServicesDirectoryComponent,
-    DashboardComponent
+    DashboardComponent,
+    CheckListComponent
   ],
   imports: [
     RouterModule.forRoot(

@@ -7,9 +7,9 @@
 </div>
 <div class='row'>
   <div class='column--small'>
-    <app-survival-kit></app-survival-kit>
+    <app-check-list [observer]=survivalKitItems [localStorageServiceType]=survivalKitServiceType></app-check-list>
   </div>
   <div class='column--small'>
-    <app-home-prep></app-home-prep>
+    <app-check-list [observer]=homePrepItems [localStorageServiceType]=homePrepServiceType></app-check-list>
   </div>
 </div>

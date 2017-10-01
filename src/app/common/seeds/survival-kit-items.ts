@@ -1,4 +1,4 @@
-import SurvivalKitItem from '../../survival-kit/survival-kit-item';
+import SurvivalKitItem from '../entities/survival-kit-item';
 
 export default [
   new SurvivalKitItem(1, 'Pocket Radio', false, 'https://www.amazon.com/Sony-ICFP26-Portable-Radio-Black/dp/B012F0DGYE'),

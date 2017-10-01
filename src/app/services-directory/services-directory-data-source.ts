@@ -1,4 +1,4 @@
-import { ServiceItem } from './service-item';
+import { ServiceItem } from '../common/entities/service-item';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import { DataSource } from '@angular/cdk/collections';
