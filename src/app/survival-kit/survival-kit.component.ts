@@ -16,7 +16,7 @@ export class SurvivalKitComponent implements OnInit {
 
   public items: Array<SurvivalKitItem> = [];
 
-  constructor(private survivalKitService: SurvivalKitService) { }
+  constructor(private localStorageService: SurvivalKitService) { }
 
   ngOnInit() {
     this.setupItems();
@@ -24,11 +24,11 @@ export class SurvivalKitComponent implements OnInit {
 
   public updateLocalStorage(): void {  
     this.setProgress();  
-    this.survivalKitService.setItems(this.items);
+    this.localStorageService.setItems(this.items);
   }
 
   private setupItems(): void {
-    this.survivalKitService.getItems().then((result)=> {
+    this.localStorageService.getItems().then((result)=> {
       if(result === null) {
         this.items = SURVIVAL_KIT_ITEMS;
       } else {
@@ -37,7 +37,7 @@ export class SurvivalKitComponent implements OnInit {
         });
       }
 
-      this.survivalKitService.setItems(this.items);
+      this.localStorageService.setItems(this.items);
       this.setProgress();
     });
   }

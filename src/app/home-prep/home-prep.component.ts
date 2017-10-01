@@ -16,7 +16,7 @@ export class HomePrepComponent implements OnInit {
 
   public items: Array<HomePrepItem> = [];
 
-  constructor(private homePrepService: HomePrepService) { }
+  constructor(private localStorageService: HomePrepService) { }
 
   ngOnInit() {
     this.setupItems();
@@ -24,11 +24,11 @@ export class HomePrepComponent implements OnInit {
 
   public updateLocalStorage(): void {
     this.setProgress();
-    this.homePrepService.setItems(this.items);
+    this.localStorageService.setItems(this.items);
   }
 
   private setupItems(): void {
-    this.homePrepService.getItems().then((result)=> {
+    this.localStorageService.getItems().then((result)=> {
       if(result === null) {
         this.items = HOME_PREP_ITEMS;
       } else {
@@ -37,7 +37,7 @@ export class HomePrepComponent implements OnInit {
         });
       }
 
-      this.homePrepService.setItems(this.items);
+      this.localStorageService.setItems(this.items);
       this.setProgress();
     });
   }
