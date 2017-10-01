@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import HomePrepItem from './home-prep-item';
-import HOME_PREP_ITEMS from '../common/seeds/home-prep-items';
+import SEED_ITEMS from '../common/seeds/home-prep-items';
 import { HomePrepService } from './home-prep.service';
 import * as localforage from "localforage";
 
@@ -30,7 +30,7 @@ export class HomePrepComponent implements OnInit {
   private setupItems(): void {
     this.localStorageService.getItems().then((result)=> {
       if(result === null) {
-        this.items = HOME_PREP_ITEMS;
+        this.items = SEED_ITEMS;
       } else {
         this.items = result.map((item)=> {
           return new HomePrepItem(item.id, item.name, item.complete);

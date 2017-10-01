@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import SurvivalKitItem from './survival-kit-item';
-import SURVIVAL_KIT_ITEMS from '../common/seeds/survival-kit-items';
+import SEED_ITEMS from '../common/seeds/survival-kit-items';
 import { SurvivalKitService } from './survival-kit.service';
 import * as localforage from "localforage";
 
@@ -30,7 +30,7 @@ export class SurvivalKitComponent implements OnInit {
   private setupItems(): void {
     this.localStorageService.getItems().then((result)=> {
       if(result === null) {
-        this.items = SURVIVAL_KIT_ITEMS;
+        this.items = SEED_ITEMS;
       } else {
         this.items = result.map((item)=> {
           return new SurvivalKitItem(item.id, item.name, item.complete, item.productLink);
