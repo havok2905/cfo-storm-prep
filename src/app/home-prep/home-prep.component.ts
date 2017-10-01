@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import HomePrepItem from './home-prep-item';
+import HOME_PREP_ITEMS from '../common/seeds/home-prep-items';
 import { HomePrepService } from './home-prep.service';
 import * as localforage from "localforage";
 
@@ -10,12 +11,6 @@ import * as localforage from "localforage";
   providers: [HomePrepService]
 })
 export class HomePrepComponent implements OnInit {
-
-  private seeds: Array<HomePrepItem> = [
-    new HomePrepItem(1, 'Board Up All Windows', false),
-    new HomePrepItem(2, 'Locate Your Nearest Shelter', false),
-    new HomePrepItem(3, 'Fill Up Your Gas Tank', false)
-  ];
 
   public progress: number = 0;
 
@@ -35,7 +30,7 @@ export class HomePrepComponent implements OnInit {
   private setupItems(): void {
     this.homePrepService.getHomePrepItems().then((result)=> {
       if(result === null) {
-        this.items = this.seeds;
+        this.items = HOME_PREP_ITEMS;
       } else {
         this.items = result.map((item)=> {
           return new HomePrepItem(item.id, item.name, item.complete);
