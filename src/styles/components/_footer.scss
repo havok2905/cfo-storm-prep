@@ -1,0 +1,19 @@
+.footer {
+  border-top: solid 1px #EEEEEE;
+  padding: 50px;
+  color: map-get($mat-blue, 500);
+  text-align: center;
+
+  img {
+    width: 100px;
+  }
+
+  p {
+    padding: 30px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  a {
+    color: map-get($mat-blue, 500);
+  }
+}

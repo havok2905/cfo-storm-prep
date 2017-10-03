@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './base/reset';
+@import './themes/material';
+@import './components/main';
+@import './layout/main';
+
+.md-toolbar-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.md-list-item-text {
+  margin-left: 10px;
+}

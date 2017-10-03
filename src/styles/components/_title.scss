@@ -1,0 +1,12 @@
+.title {
+  display: block;
+  margin: 1em auto;
+  max-width: 900px;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 3em;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  color: map-get($mat-blue, 500);
+  text-transform: uppercase;
+}
