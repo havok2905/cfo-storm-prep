@@ -1,7 +1,8 @@
 .footer {
-  border-top: solid 1px #EEEEEE;
+  border-top: solid 1px $light-grey;
   padding: 50px;
-  color: map-get($mat-blue, 500);
+  color: $primary;
+  font-family: $font-family;
   text-align: center;
 
   img {
@@ -10,10 +11,9 @@
 
   p {
     padding: 30px;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
   }
 
   a {
-    color: map-get($mat-blue, 500);
+    color: $primary;
   }
 }

@@ -1,7 +1,7 @@
 .icon-status-done {
-  color: map-get($mat-green, A400);
+  color: $accent;
 }
 
 .icon-status-warning {
-  color: map-get($mat-red, 600);
+  color: $warn;
 }
