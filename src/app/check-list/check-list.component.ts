@@ -7,6 +7,8 @@ import { Observable } from 'rxjs/Rx';
 })
 export class CheckListComponent implements OnInit {
 
+  @Input() checklistTitle: string;
+
   @Input() observer: Observable<Array<any>>;
 
   @Input() localStorageServiceType: any;
