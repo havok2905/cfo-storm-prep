@@ -1,18 +1,13 @@
 <md-toolbar color="primary">
   <h1 i18n=@@toolbarHeader>
-    <a class='navbar-link' href='/'>
-      Orlando Storm Preperation
-    </a>
+    <a class='navbar-link' [routerLink]="['/']">Orlando Storm Preperation</a>
   </h1>
   <span class="md-toolbar-fill-remaining-space"></span>
-  <span>
-    <a class='navbar-link' href='/food-guide'>Food Guide</a>
-  </span>
-  <span>
-    <a class='github-link' href="https://github.com/havok2905/cfo-storm-prep">
-      <img src='assets/github.png' alt='github logo'/>
-    </a>
-  </span>
+  <a class='navbar-link' [routerLink]="['/food-guide']">Food Guide</a>
+  <a class='navbar-link' [routerLink]="['/helpful-resources']">Helpful Resources</a>
+  <a class='github-link' href="https://github.com/havok2905/cfo-storm-prep">
+    <img src='assets/github.png' alt='github logo'/>
+  </a>
 </md-toolbar>
 
 <router-outlet></router-outlet>

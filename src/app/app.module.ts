@@ -18,10 +18,12 @@ import { ServicesDirectoryComponent } from './services-directory/services-direct
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CheckListComponent } from './check-list/check-list.component';
 import { FoodGuideComponent } from './food-guide/food-guide.component';
+import { HelpfulResourcesComponent } from './helpful-resources/helpful-resources.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'food-guide', component: FoodGuideComponent }
+  { path: 'food-guide', component: FoodGuideComponent },
+  { path: 'helpful-resources', component: HelpfulResourcesComponent }
 ];
 
 @NgModule({
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     ServicesDirectoryComponent,
     DashboardComponent,
     CheckListComponent,
-    FoodGuideComponent
+    FoodGuideComponent,
+    HelpfulResourcesComponent
   ],
   imports: [
     RouterModule.forRoot(
