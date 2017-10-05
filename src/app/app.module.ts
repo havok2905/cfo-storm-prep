@@ -14,7 +14,6 @@ import {
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ServicesDirectoryComponent } from './services-directory/services-directory.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CheckListComponent } from './check-list/check-list.component';
 import { HelpfulResourcesComponent } from './helpful-resources/helpful-resources.component';
@@ -27,7 +26,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ServicesDirectoryComponent,
     DashboardComponent,
     CheckListComponent,
     HelpfulResourcesComponent
