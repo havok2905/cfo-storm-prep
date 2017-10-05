@@ -1,0 +1,13 @@
+html, body {
+  font-family: $font-family;
+}
+
+h2 {
+  margin: 1em 0;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 3em;
+  font-weight: 900;
+  color: $black;
+  text-transform: capitalize;
+}
