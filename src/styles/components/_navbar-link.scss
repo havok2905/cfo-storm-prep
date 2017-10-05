@@ -1,3 +1,11 @@
 .navbar-link {
+  font-size: 14px;
   color: $white;
+  margin: 0 5px;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: darken($white, 10);
+  }
 }
